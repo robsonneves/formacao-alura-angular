@@ -1,3 +1,4 @@
+import { TransferenciaService } from './services/transferencia.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,8 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'comecando-com-framework';
 
-  transfere($event){
-
-    console.log($event);
-  }
+  constructor(private service: TransferenciaService){}
 }
