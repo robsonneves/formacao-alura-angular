@@ -4,3 +4,20 @@ Baixar angular/cli
 
 ng new nome-do-projeto
 
+ng new nome-do-projeto --strict 
+
+npm i bootstrap font-awesome
+
+code. (abrir o vsCode)
+
+ng g m nome-do-modulo --routing -d
+ng g m nome-do-modulo --routing
+
+instalar json-server
+    npm install -g json-server
+
+Rodar json-server
+    json-server --watch db.json
+
+
+    
