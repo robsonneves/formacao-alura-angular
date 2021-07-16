@@ -1,0 +1,39 @@
+<h4 class="text-center">Registre-se e mostre ao mundo seu PET !</h4>
+
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+  <div class="form-group">
+    <input placeholder="e-mail" class="form-control" formControlName="email">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('email')?.errors?.required &&
+              novoUsuarioForm.get('email')?.touched"
+      msg="E-mail obrigatorio!">
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('email')?.errors?.email &&
+              novoUsuarioForm.get('email')?.touched"
+      msg="E-mail invalido!">
+    </app-mensagem>
+  </div>
+  <br>
+  <div class="form-group">
+    <input placeholder="Nome completo" class="form-control" formControlName="fullName">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('fullName')?.errors &&
+              novoUsuarioForm.get('fullName')?.touched"
+      msg="Nome completo obrigatorio!">
+    </app-mensagem>
+  </div>
+  <br>
+  <div class="form-group">
+    <input placeholder="Usuário" class="form-control" formControlName="userName">
+  </div>
+  <br>
+  <div class="form-group">
+    <input type="password" placeholder="Senha" class="form-control" formControlName="password">
+  </div>
+  <br>
+  <button class="btn btn-primary btn-block">Cadastro</button>
+</form>
+
+<br>
+<p>Já é um usuário <a [routerLink]="['']"> Faça login </a></p>
