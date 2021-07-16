@@ -26,11 +26,20 @@
   <br>
   <div class="form-group">
     <input placeholder="Usuário" class="form-control" formControlName="userName">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.minusculo &&
+              novoUsuarioForm.get('userName')?.touched"
+      msg="Nome aceita somente letras minusculas!">
+    </app-mensagem>
   </div>
   <br>
   <div class="form-group">
     <input type="password" placeholder="Senha" class="form-control" formControlName="password">
   </div>
+  <app-mensagem
+      *ngIf="novoUsuarioForm?.errors?.senhaIgualUsuario"
+      msg="Senha invalida, Nome e senha iguais ">
+    </app-mensagem>
   <br>
   <button class="btn btn-primary btn-block">Cadastro</button>
 </form>

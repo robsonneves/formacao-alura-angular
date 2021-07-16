@@ -19,5 +19,7 @@ instalar json-server
 Rodar json-server
     json-server --watch db.json
 
+JWT
+    npm i jwt-decode
 
     
